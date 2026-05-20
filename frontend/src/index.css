@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-200 font-sans antialiased;
+    min-height: 100vh;
+    min-height: 100dvh;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+  }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-700 rounded-full; }
+}
+
+@layer utilities {
+  .glass { background: rgba(30,41,59,0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
+  .card { @apply bg-slate-800/80 rounded-2xl border border-slate-700/50; }
+  .btn-neon { @apply bg-gradient-neon text-slate-900 font-bold px-5 py-3 rounded-xl shadow-neon-sm hover:shadow-neon-md transition-all duration-200 active:scale-95; }
+  .btn-ghost { @apply bg-slate-800 text-slate-300 font-medium px-5 py-3 rounded-xl border border-slate-700 hover:border-lime-neon/40 hover:text-lime-neon transition-all duration-200 active:scale-95; }
+  .input-dark { @apply w-full bg-slate-900 text-slate-100 placeholder-slate-600 border border-slate-700 rounded-xl px-4 py-3 focus:outline-none focus:border-lime-neon focus:ring-1 focus:ring-lime-neon/30 transition-all; }
+  .badge-active { @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-lime-neon/15 text-lime-neon border border-lime-neon/30; }
+  .badge-expired { @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-danger/15 text-danger border border-danger/30; }
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }
+}
+
+@keyframes row-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-row-in {
+  animation: row-slide-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slide-left {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-slide-left {
+  animation: slide-left 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* For non-centered elements */
+@keyframes slide-up-normal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up-normal {
+  animation: slide-up-normal 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+/* GPU acceleration helper */
+.gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+
+/* Elastic touch scrolling */
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+
