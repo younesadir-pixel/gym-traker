@@ -32,8 +32,8 @@ export default {
         'flash': 'flash 0.5s ease-in-out 3',
       },
       keyframes: {
-        fadeIn: { '0%': { opacity: '0', transform: 'translateY(8px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-        slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+        fadeIn: { '0%': { opacity: '0', transform: 'translate3d(0, 8px, 0)' }, '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' } },
+        slideUp: { '0%': { opacity: '0', transform: 'translate3d(0, 20px, 0)' }, '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' } },
         pulseNeon: { '0%,100%': { boxShadow: '0 0 8px rgba(222,255,154,0.3)' }, '50%': { boxShadow: '0 0 24px rgba(222,255,154,0.7)' } },
         flash: { '0%,100%': { opacity: '1' }, '50%': { opacity: '0.3' } },
       },
